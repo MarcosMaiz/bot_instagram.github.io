@@ -941,33 +941,32 @@ const botonSiguiente = document.getElementById("boton");
 const parrafo = document.getElementById("parrafo");
 const parrafo2 = document.getElementById("parrafo2");
 
-function imprimirUsuarios() {
-  if (iteraciones === usuarios.length * frases.length) {
+function llamarUsuarios() {
+  if (iteraciones === usuarios.length * frases.length - 1) {
     botonSiguiente.style.display = "none";
     parrafo2.innerHTML = "YA NO QUEDAN MAS USUARIOS DISPONIBLES";
   }
   if (i < usuarios.length) {
     if (i < usuarios.length - 1) {
-      parrafo.innerHTML = usuarios[i] + " " + frases[contador_frases];
+      imprimirUsuarios();
       i += 1;
       iteraciones += 1;
-      parrafo2.innerHTML =
-        "Esta es la iteracion " +
-        iteraciones +
-        " de " +
-        usuarios.length * frases.length;
     } else if (i >= usuarios.length - 1) {
-      parrafo.innerHTML = usuarios[i] + " " + frases[contador_frases];
+      imprimirUsuarios();
       i = 0;
       iteraciones += 1;
       contador_frases += 1;
-      parrafo2.innerHTML =
-        "Esta es la iteracion " +
-        iteraciones +
-        " de " +
-        usuarios.length * frases.length;
     }
   }
 }
 
-botonSiguiente.addEventListener("click", imprimirUsuarios);
+function imprimirUsuarios() {
+  parrafo.innerHTML = usuarios[i] + " " + frases[contador_frases];
+  parrafo2.innerHTML =
+    "Esta es la iteracion " +
+    (iteraciones + 1) +
+    " de " +
+    usuarios.length * frases.length;
+}
+
+botonSiguiente.addEventListener("click", llamarUsuarios);
