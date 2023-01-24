@@ -1,16 +1,6 @@
 //Para continuar el ciclo en la ultima posicion donde estaba lo unico que hay que hacer es cambiar el valor de i por el valor de La posicion del usuario en el array es ...
 
 let usuarios = [
-  "@janirelujanruiz_",
-  "@josegovia_",
-  "@mariandiazro_",
-  "@mathias_medina18",
-  "@enriquesoler21",
-  "@roman_.95",
-  "@valennkook97",
-  "@anilopeez",
-  "@rikibarba",
-  "@esteban_mallorquin_",
   "@abrilka9",
   "@aravazquez",
   "@javier_leiro",
